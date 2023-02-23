@@ -11,7 +11,7 @@ WORKDIR       /build/librespot
 RUN           git checkout 295bda7e489715b9e6c27a262f9a4fcd12fb7632
 RUN           cargo build -Z unstable-options --release --out-dir /dist --no-default-features --features pulseaudio-backend
 
-FROM debian:stretch as runtime
+FROM debian:buster as runtime
 WORKDIR       /librespot
 ARG           DEBIAN_FRONTEND="noninteractive"
 RUN           apt-get update -qq \
