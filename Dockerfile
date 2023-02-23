@@ -1,4 +1,4 @@
-FROM golang:latest AS builder
+FROM golang:1.16-buster AS builder
 WORKDIR       /build
 RUN           apt-get update && apt-get install -qq --no-install-recommends \
                 libasound2-dev=1.1.8-1 \
