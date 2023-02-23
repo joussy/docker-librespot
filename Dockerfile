@@ -3,7 +3,7 @@ WORKDIR       /build
 RUN           apt-get update && apt-get install -qq --no-install-recommends \
                 libasound2-dev=1.1.8-1 \
                 curl \
-                cargo=0.35.0-2 \
+                cargo \
                 git \
                 libpulse-dev
 RUN           git clone git://github.com/librespot-org/librespot
@@ -16,7 +16,7 @@ WORKDIR       /librespot
 ARG           DEBIAN_FRONTEND="noninteractive"
 RUN           apt-get update -qq \
               && apt-get install -qq --no-install-recommends \
-                libasound2=1.1.8-1 \
+                libasound2 \
                 libpulse-dev \
                 curl
 COPY          --from=builder /dist .
