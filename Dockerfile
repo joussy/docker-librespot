@@ -6,7 +6,7 @@ RUN           apt-get update && apt-get install -qq --no-install-recommends \
                 cargo \
                 git \
                 libpulse-dev
-RUN           git clone git://github.com/librespot-org/librespot
+RUN           git clone https://github.com/librespot-org/librespot
 WORKDIR       /build/librespot
 RUN           git checkout 295bda7e489715b9e6c27a262f9a4fcd12fb7632
 RUN           cargo build -Z unstable-options --release --out-dir /dist --no-default-features --features pulseaudio-backend
